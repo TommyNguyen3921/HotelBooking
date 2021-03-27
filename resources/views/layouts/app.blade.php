@@ -16,6 +16,7 @@
         <h1 class="text-center">HOTEL</h1>
         @include('inc.navbar')
         <div class="container">
+            @include('inc.messages')
        @yield('content')
         </div>
         <footer id="footer" class="navbar navbar-expand navbar-dark text-white bg-dark">

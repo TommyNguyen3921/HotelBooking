@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use App\Proom;
 
-class PostsController extends Controller
+class ProomsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('posts.index')->with('posts',$posts);
+        $prooms = Proom::all();
+        return view('prooms.index')->with('prooms',$prooms);
     }
 
     /**
@@ -25,7 +25,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        //
     }
 
     /**
@@ -36,15 +36,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['number'=>'required','name'=>'required','description'=>'required','maxocc'=>'required']);
-
-        $post = new Post;
-        $post->number = $request->input('number');
-        $post->name = $request->input('name');
-        $post->description = $request->input('description');
-        $post->maxocc = $request->input('maxocc');
-        $post->save();
-        return redirect('/posts')->with('success', 'Post Created');
+        //
     }
 
     /**
@@ -55,8 +47,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('posts.show')->with('post', $post);
+        $proom = Proom::find($id);
+        return view('prooms.show')->with('proom', $proom);
     }
 
     /**

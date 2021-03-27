@@ -1,7 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Rooms</h1>
+<h1>Booking </h1>
+@if(count($prooms) > 0)
+        @foreach($prooms as $proom)
+        <div class="well">
+            <h3><a href="prooms/{{$proom->id}}">{{$proom->guestname}}</a></h3>
+         
+
+        </div>
+        @endforeach
+    @else
+        <p>no posts found</p>
+    @endif
+
+
+    
     <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -15,19 +29,18 @@
         
         </tr>
     </thead>
-        @if(count($posts) > 0)
-        @foreach($posts as $post)
+        @if(count($prooms) > 0)
+        @foreach($prooms as $proom)
         <tr>
        
        
-        <td>{{$post->number}}</td>
-        <td>{{$post->name}}</td>
-        <td>{{$post->description}}</td>
-        <td>{{$post->maxocc}}</td>
+        <td>{{$proom->id}}</td>
+        <td>{{$proom->guestname}}</td>
+        
         <td><a href="">Edit</a></td>
         <td><a href="">Delete</a></td>
         </tr>
         @endforeach
        </table>
        @endif
-@endsection
+       @endsection
