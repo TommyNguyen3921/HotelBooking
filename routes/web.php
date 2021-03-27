@@ -23,9 +23,9 @@ Route::get('/users/{id}', function ($id) {
     
 });
 */
-Route::get('/', 'PagesController@index');
+//Route::get('/', 'PagesController@index');
 Route::get('/booking', 'PagesController@booking');
 Route::get('/about', 'PagesController@about');
 
-Route::resource('posts', 'PostsController');
+Route::resource('/', 'PostsController');
 
