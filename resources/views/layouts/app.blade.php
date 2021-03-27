@@ -18,5 +18,8 @@
         <div class="container">
        @yield('content')
         </div>
+        <footer id="footer" class="navbar navbar-expand navbar-dark text-white bg-dark">
+            <p >Copyright 2020</p>
+            </footer>
     </body>
 </html>
