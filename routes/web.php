@@ -23,7 +23,7 @@ Route::get('/users/{id}', function ($id) {
     
 });
 */
-Route::get('/index', 'PagesController@index');
+Route::get('/', 'PagesController@index');
 Route::get('/booking', 'PagesController@booking');
 Route::get('/about', 'PagesController@about');
 
