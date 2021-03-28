@@ -105,7 +105,7 @@ class PostsController extends Controller
 
        $raw_query = 'DELETE posts, prooms
        FROM posts
-       JOIN prooms ON posts.number = prooms.id
+       USING prooms ON posts.number = prooms.id
        WHERE posts.id = ?';  
        
        $status = \DB::delete($raw_query, array($id));
