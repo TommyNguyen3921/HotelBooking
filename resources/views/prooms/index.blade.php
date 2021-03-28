@@ -20,12 +20,18 @@
         @foreach($prooms as $proom)
         <tr>
        
-       
+            <td>{{$proom->book_id}}</td>
         <td>{{$proom->id}}</td>
         <td>{{$proom->guestname}}</td>
         
         
-        <td><a href="">Delete</a></td>
+        <td>
+            {!!Form::open(['action'=> ['ProomsController@destroy',$proom->book_id, 'method' => 'POST']])!!}
+            {{Form::hidden('_method', 'DELETE')}}
+            {{Form::submit('Delete',['class'=> 'btn btn-danger'])}}
+        {!!form::close()!!}
+
+        </td>
         </tr>
         @endforeach
        </table>

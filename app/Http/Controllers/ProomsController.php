@@ -93,8 +93,10 @@ class ProomsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($book_id)
     {
-        //
+        Proom::where('book_id', $book_id)->delete();
+        
+        return redirect('/prooms')->with('success', 'Booking Deleted');
     }
 }

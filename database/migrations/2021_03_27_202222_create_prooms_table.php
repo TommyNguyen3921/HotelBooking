@@ -14,6 +14,7 @@ class CreateProomsTable extends Migration
     public function up()
     {
         Schema::create('prooms', function (Blueprint $table) {
+            $table->bigIncrements('book_id');
             $table->bigInteger('id');
             $table->string('guestname');
             $table->string('checkin');
