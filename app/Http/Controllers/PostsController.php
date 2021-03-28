@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use DB;
 
 class PostsController extends Controller
 {
@@ -25,6 +26,7 @@ class PostsController extends Controller
      */
     public function create()
     {
+        
         return view('posts.create');
     }
 
@@ -98,8 +100,18 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
-        $post->delete();
+
+        
+
+       $raw_query = 'DELETE posts, prooms
+       FROM posts
+       INNER JOIN prooms ON posts.number = prooms.id
+       WHERE posts.id = ?';  
+       
+       $status = \DB::delete($raw_query, array($id));
+
+        //$post = Post::find($id);
+        //$post->delete();
         return redirect('/posts')->with('success', 'Post Deleted');
     }
 }

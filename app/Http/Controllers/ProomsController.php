@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Proom;
 use App\Post;
+use DB;
 
 class ProomsController extends Controller
 {
@@ -16,7 +17,12 @@ class ProomsController extends Controller
     public function index()
     {
         
-        $prooms = Proom::orderBy('id','asc')->get();
+        //$prooms = Proom::orderBy('id','asc')->get();
+        $prooms = DB::table('posts')
+        ->join('prooms','posts.number','prooms.id')
+        ->orderBy('prooms.id','asc')
+        ->get();
+        
         return view('prooms.index')->with('prooms',$prooms);
     }
 

@@ -2,17 +2,7 @@
 
 @section('content')
     <h1>Rooms</h1>
-    @if(count($posts) > 0)
-        @foreach($posts as $post)
-        <div class="well">
-            <h3><a href="posts/{{$post->id}}">{{$post->number}}</a></h3>
-         
-
-        </div>
-        @endforeach
-    @else
-        <p>no posts found</p>
-    @endif
+   
 
     <h1><a class="nav-link" href={{ url('posts/create')}}>Create Room</a><h1>
     

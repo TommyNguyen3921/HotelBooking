@@ -8,9 +8,8 @@
         <tr>
         <th >Room Number</th>
         <th>Room Name</th>
-        <th>Room Description</th>
-        <th>Max Occupancy</th>
-        <th>edit description</th>
+        <th>Guest Name</th>
+        <th>Date</th>
         <th>Delete</th>
         
         
@@ -20,9 +19,11 @@
         @foreach($prooms as $proom)
         <tr>
        
-            <td>{{$proom->book_id}}</td>
-        <td>{{$proom->id}}</td>
-        <td>{{$proom->guestname}}</td>
+            <td>{{$proom->number}}</td>
+            <td>{{$proom->name}}</td>
+            <td>{{$proom->guestname}}</td>
+            <td>{{$proom->checkin}}</td>
+       
         
         
         <td>
