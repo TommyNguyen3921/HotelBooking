@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Proom;
+use App\Post;
 
 class ProomsController extends Controller
 {
@@ -14,7 +15,8 @@ class ProomsController extends Controller
      */
     public function index()
     {
-        $prooms = Proom::all();
+        
+        $prooms = Proom::orderBy('id','asc')->get();
         return view('prooms.index')->with('prooms',$prooms);
     }
 
@@ -25,7 +27,10 @@ class ProomsController extends Controller
      */
     public function create()
     {
-        //
+        $posts = Post::all();
+        return view('prooms.create')->with('posts',$posts);
+
+        
     }
 
     /**
@@ -36,7 +41,15 @@ class ProomsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,['guestname'=>'required','id'=>'required','checkin'=>'required']);
+        $proom = new Proom;
+       
+        $proom->guestname = $request->input('guestname');
+        $proom->id = $request->input('id');
+        $proom->checkin = $request->input('checkin');
+        $proom->save();
+
+        return redirect('/prooms')->with('success', 'Prooms Created');
     }
 
     /**
