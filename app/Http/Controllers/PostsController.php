@@ -100,16 +100,18 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-
+        $raw_query ='DELETE FROM prooms,posts USING posts,prooms
+        WHERE posts.id = ? AND posts.number=prooms.id';
         
-
+/*
        $raw_query = 'DELETE posts, prooms
        FROM posts
-       USING prooms ON posts.number = prooms.id
+       INNER JOIN prooms ON posts.number = prooms.id
        WHERE posts.id = ?';  
        
        $status = \DB::delete($raw_query, array($id));
-
+*/
+$status = \DB::delete($raw_query, array($id));
         //$post = Post::find($id);
         //$post->delete();
         return redirect('/posts')->with('success', 'Post Deleted');
