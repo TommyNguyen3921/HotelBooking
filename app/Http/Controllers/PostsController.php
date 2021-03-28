@@ -100,9 +100,11 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        $raw_query ="DELETE FROM prooms,posts USING posts,prooms
-        WHERE posts.id = ? AND posts.number=prooms.id";
-        
+        $raw_query ='DELETE FROM posts 
+        WHERE id = ? ';
+
+        //$raw_query ='DELETE FROM prooms,posts USING posts,prooms
+        //WHERE posts.id = ? AND posts.number=prooms.id';
 /*
        $raw_query = 'DELETE posts, prooms
        FROM posts
