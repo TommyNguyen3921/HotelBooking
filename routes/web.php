@@ -12,18 +12,7 @@
 */
 
 
-/*
-Route::get('/hello', function () {
-    return 'welcome';
-    
-});
 
-Route::get('/users/{id}', function ($id) {
-    return 'This is user ' . $id;
-    
-});
-*/
-//Route::get('/', 'PagesController@index');
 
 
 

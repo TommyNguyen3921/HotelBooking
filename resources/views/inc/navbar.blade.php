@@ -5,14 +5,14 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href={{ url('/')}}>Rooms</a>
+        <ul class="navbar-nav ">
+          <li class="nav-item {{'/'== request()->path() ? 'active' : ''}}">
+            <a class="nav-link " aria-current="page" href={{ url('/')}}>Rooms</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {{'prooms'== request()->path() ? 'active' : ''}}">
             <a class="nav-link" href={{ url('prooms')}}>Bookings</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {{'about'== request()->path() ? 'active' : ''}}">
             <a class="nav-link" href={{ url('about')}}>About</a>
           </li>
          
