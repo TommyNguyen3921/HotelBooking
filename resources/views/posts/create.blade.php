@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Create post</h1>
-    {!! Form::open(['action'=> 'PostsController@store', 'mthod'=> 'POST']) !!}
+    <h1>Create Room</h1>
+    {!! Form::open(['action'=> 'PostsController@store', 'method'=> 'POST']) !!}
         <div class="form-group">
 
             {{form::label('number','Room Number')}}

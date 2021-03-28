@@ -38,8 +38,15 @@
         <td>{{$post->name}}</td>
         <td>{{$post->description}}</td>
         <td>{{$post->maxocc}}</td>
-        <td><a href="">Edit</a></td>
-        <td><a href="">Delete</a></td>
+        <td><a href = "posts/{{$post->id}}/edit" >Edit</a></td>
+       
+
+        <td>
+            {!!Form::open(['action'=> ['PostsController@destroy',$post->id, 'method' => 'POST']])!!}
+                {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('Delete',['class'=> 'btn btn-danger'])}}
+            {!!form::close()!!}
+        </td>
         </tr>
         @endforeach
        </table>
