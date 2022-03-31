@@ -1,3 +1,9 @@
+<!-- 
+StAuth10065: I Tommy Nguyen, 000786251 certify that this material is my original work.
+ No other person's work has been used without due acknowledgement. I have not made my work available to anyone else.
+-->
+
+
 <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
     <div class="container-fluid">
       <a class="navbar-brand" href={{ url('/')}}>Hotel</a>

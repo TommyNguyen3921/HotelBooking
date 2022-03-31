@@ -1,5 +1,8 @@
 <?php
-
+/*
+StAuth10065: I Tommy Nguyen, 000786251 certify that this material is my original work.
+ No other person's work has been used without due acknowledgement. I have not made my work available to anyone else.
+*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -17,7 +20,7 @@ class ProomsController extends Controller
     public function index()
     {
         
-        //$prooms = Proom::orderBy('id','asc')->get();
+        
         $prooms = DB::table('posts')
         ->join('prooms','posts.number','prooms.id')
         ->orderBy('prooms.id','asc')
@@ -66,8 +69,7 @@ class ProomsController extends Controller
      */
     public function show($id)
     {
-        $proom = Proom::find($id);
-        return view('prooms.show')->with('proom', $proom);
+       
     }
 
     /**
